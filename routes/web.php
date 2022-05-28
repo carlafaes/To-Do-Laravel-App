@@ -28,6 +28,6 @@ Route::get('/todos', [todoController::class, 'index'])->name('todos');
 
 Route::get('/todos/{id}', [todoController::class, 'show'])->name('todos-show');
 
-Route::patch('/todos', [todoController::class, 'index'])->name('todos-update');
+Route::patch('/todos/{id}', [todoController::class, 'update'])->name('todos-update');
 
-Route::delete('/todos', [todoController::class, 'index'])->name('todos-destroy');
+Route::delete('/todos/{id}', [todoController::class, 'destroy'])->name('todos-destroy');

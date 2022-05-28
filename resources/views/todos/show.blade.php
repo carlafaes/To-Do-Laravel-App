@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container w-25 border p-4 mt-4">
-    <form action="{{ route('todos-update') }}" method="POST">
+    <form action="{{ route('todos-update', ['id' => $todo->id]) }}" method="POST">
+        @method('PATCH')
     <!-- cross site request forgery     -->
     @csrf 
 
@@ -19,7 +20,7 @@
     @enderror
     <div class="mb-3">
         <label for="title" class="form-label">Task Title</label>
-        <input type="text" name="title" class="form-control" value="{{ $todo->title}}">
+        <input type="text" name="title" class="form-control" value="{{ $todo->title }}">
     </div>
     <button type="submit" class="btn btn-primary">Update Task</button>
     </form>
