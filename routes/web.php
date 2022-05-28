@@ -22,4 +22,4 @@ Route::get('/todos', function () {
     return view('todos.index');
 });
 
-Route::post('/todos', [todoController::class, 'todoController@store']);
+Route::post('/todos', [todoController::class, 'store'])->name('todos');

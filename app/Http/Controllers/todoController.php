@@ -17,7 +17,7 @@ class todoController extends Controller
     public function store(Request $request){
 
         $request-> validate([
-            'title' => 'require|min:3'
+            'title' => 'required|min:3'
         ]);
         $todo= new Todo;
         $todo-> title= $request->title;/**le asignamos los valores */
